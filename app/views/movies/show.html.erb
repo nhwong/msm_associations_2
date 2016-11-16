@@ -6,7 +6,13 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Director</dt>
-      <dd><%= @movie.director_id %></dd>
+      <dd>
+        <% if @movie.director.present? %>
+          <a href="/directors/<%= @movie.director_id %>">
+            <%= @movie.director.dob %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Title</dt>
       <dd><%= @movie.title %></dd>
